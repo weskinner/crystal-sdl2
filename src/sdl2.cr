@@ -55,4 +55,8 @@ module SDL2
       yield event
     end
   end
+
+  def self.delay(ms : UInt32)
+    LibSDL2.delay(ms)
+  end
 end

@@ -36,10 +36,15 @@ module SDL2
     enum Flags : UInt32
       ACCELERATED = 0x00000002
       PRESENTVSYNC = 0x00000004
+      TARGETTEXTURE = 0x00000008
     end
   end
 
-  enum EventType
+  enum RenderFlip
+    NONE
+  end
+
+  enum EventType : UInt32
     FIRSTEVENT     = 0
 
     QUIT           = 0x100
