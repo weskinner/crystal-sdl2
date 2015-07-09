@@ -91,9 +91,7 @@ lib LibSDL2
     #TODO
   end
 
-  struct Texture
-    #TODO
-  end
+  alias Texture = Void*
 
   enum Key
     ESCAPE = 27
@@ -162,11 +160,9 @@ lib LibSDL2
     padding : UInt8[56]
   end
 
-  struct RWops
-  end
-  
-  struct Point
-  end
+  alias RWops = Void*
+
+  alias Point = Void*
 
   type TimerCallback = (UInt32, Void*) -> UInt32
 
