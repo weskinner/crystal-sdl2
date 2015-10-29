@@ -167,6 +167,9 @@ lib LibSDL2
   type TimerCallback = (UInt32, Void*) -> UInt32
 
   fun init = SDL_Init(flags : SDL2::INIT) : Int32
+  fun init_sub_system = SDL_InitSubSystem(flags : SDL2::INIT)
+  fun quit_sub_system = SDL_QuitSubSystem(flags : SDL2::INIT)
+  fun was_init = SDL_WasInit(flags : SDL2::INIT) : SDL2::INIT
   fun get_error = SDL_GetError() : UInt8*
   fun quit = SDL_Quit() : Void
   # fun set_video_mode = SDL_SetVideoMode(width : Int32, height : Int32, bpp : Int32, flags : UInt32) : Surface*
