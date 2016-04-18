@@ -1,7 +1,7 @@
 struct SDL2::Rect
   property x, y, w, h
 
-  def initialize(@x = 0 : Int, @y = 0, @w = 0, @h = 0)
+  def initialize(@x : Int = 0, @y = 0, @w = 0, @h = 0)
   end
 
   def self.new(rect : LibSDL2::Rect)
