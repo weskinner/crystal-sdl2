@@ -199,6 +199,14 @@ lib LibSDL2
   fun render_present = SDL_RenderPresent(renderer : Renderer*) : Int32
   fun render_copy = SDL_RenderCopy(renderer : Renderer*, texture : Texture*, srcrect : Rect*, dstrect : Rect*) : Int16
   fun render_copy_ex = SDL_RenderCopyEx(renderer : Renderer*, texture : Texture*, srcrect : Rect*, dstrect : Rect*, angle : Float64, center : Point*, flip : SDL2::RenderFlip) : Int32
+  fun render_draw_point = SDL_RenderDrawPoint(renderer : Renderer*, x : Int32, y : Int32) : Int32
+  fun render_draw_points = SDL_RenderDrawPoints(renderer : Renderer*, points : Point*, count : Int32) : Int32
+  fun render_draw_line = SDL_RenderDrawLine(renderer : Renderer*, x1 : Int32, y1 : Int32, x2 : Int32, y2 : Int32) : Int32
+  fun render_draw_lines = SDL_RenderDrawLines(renderer : Renderer*, points : Point*, count : Int32) : Int32
+  fun render_draw_rect = SDL_RenderDrawRect(renderer : Renderer*, rect : Rect*) : Int32
+  fun render_draw_rects = SDL_RenderDrawRects(renderer : Renderer*, rects : Rect*, count : Int32) : Int32
+  fun render_fill_rect = SDL_RenderFillRect(renderer : Renderer*, rect : Rect*) : Int32
+  fun render_fill_rects = SDL_RenderFillRects(renderer : Renderer*, rects : Rect*, count : Int32) : Int32
   fun set_render_draw_blend_mode = SDL_SetRenderDrawBlendMode(renderer : Renderer*, mode : BlendMode) : Int32
   fun set_render_target = SDL_SetRenderTarget(renderer : Renderer*, texture : Texture*) : Int32
   fun set_render_draw_color = SDL_SetRenderDrawColor(renderer : Renderer*, r : UInt8, g : UInt8, b : UInt8, a : UInt8) : Int32
