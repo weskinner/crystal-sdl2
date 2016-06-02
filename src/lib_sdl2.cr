@@ -206,6 +206,8 @@ lib LibSDL2
   fun create_texture_from_surface = SDL_CreateTextureFromSurface(renderer : Renderer*, surface : Surface*) : Texture*
   fun create_texture = SDL_CreateTexture(renderer : Renderer*, format : UInt32, access : TextureAccess, w : Int32, h : Int32) : Texture*
   fun destroy_texture = SDL_DestroyTexture(texture : Texture*) : Void
+  fun set_texture_color_mod = SDL_SetTextureColorMod(texture : Texture*, r : UInt8, g : UInt8, b : UInt8) : Int32
+  fun set_texture_alpha_mod = SDL_SetTextureAlphaMod(texture : Texture*, alpha : UInt8) : Int32
 
   fun rw_from_file = SDL_RWFromFile(str1 : UInt8*, str2 : UInt8*) : RWops*
   fun load_bmp_rw = SDL_LoadBMP_RW(rw_ops : RWops*, int : Int32) : Surface*
