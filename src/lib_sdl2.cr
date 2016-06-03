@@ -230,6 +230,8 @@ lib LibSDL2
 
   fun blit_surface = SDL_UpperBlit(src : Surface*, src_rect : Rect*, dst : Surface*, dst_rect : Rect*) : Int32
   fun free_surface = SDL_FreeSurface(surface : Surface*) : Void
+  fun set_color_key = SDL_SetColorKey(surface : Surface*, flag : Int32, key : UInt32) : Int32
+  fun get_color_key = SDL_GetColorKey(surface : Surface*, key : UInt32*) : Int32
 
   fun add_timer = SDL_AddTimer(interval : UInt32, callback : TimerCallback, param : Void*) : Int32
   fun remove_timer = SDL_RemoveTimer(id : Int32) : Int32
