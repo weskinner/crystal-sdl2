@@ -176,6 +176,10 @@ lib LibSDL2
   # fun load_bmp = SDL_LoadBMP(file : UInt8*) : Surface*
   fun create_window = SDL_CreateWindow(title : UInt8*, x : Int32, y : Int32, width : Int32, height : Int32, flags : SDL2::Window::Flags) : Window*
   fun destroy_window = SDL_DestroyWindow(Window*) : Void
+  fun set_window_position = SDL_SetWindowPosition(window : Window*, x : Int32, y : Int32) : Void
+  fun get_window_position = SDL_GetWindowPosition(window : Window*, x : Int32*, y : Int32*) : Void
+  fun set_window_size = SDL_SetWindowSize(window : Window*, w : Int32, h : Int32) : Void
+  fun get_window_size = SDL_GetWindowSize(window : Window*, w : Int32*, h : Int32*) : Void
   fun delay = SDL_Delay(ms : UInt32) : Void
   fun poll_event = SDL_PollEvent(event : Event*) : Int32
   fun wait_event = SDL_WaitEvent(event : Event*) : Int32
