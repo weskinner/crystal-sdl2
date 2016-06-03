@@ -211,6 +211,8 @@ lib LibSDL2
   fun render_draw_rects = SDL_RenderDrawRects(renderer : Renderer*, rects : Rect*, count : Int32) : Int32
   fun render_fill_rect = SDL_RenderFillRect(renderer : Renderer*, rect : Rect*) : Int32
   fun render_fill_rects = SDL_RenderFillRects(renderer : Renderer*, rects : Rect*, count : Int32) : Int32
+  fun render_set_scale = SDL_RenderSetScale(renderer : Renderer*, scale_x : Float32, scale_y : Float32) : Int32
+  fun render_get_scale = SDL_RenderGetScale(renderer : Renderer*, scale_x : Float32*, scale_y : Float32*) : Void
   fun set_render_draw_blend_mode = SDL_SetRenderDrawBlendMode(renderer : Renderer*, mode : BlendMode) : Int32
   fun set_render_target = SDL_SetRenderTarget(renderer : Renderer*, texture : Texture*) : Int32
   fun set_render_draw_color = SDL_SetRenderDrawColor(renderer : Renderer*, r : UInt8, g : UInt8, b : UInt8, a : UInt8) : Int32
