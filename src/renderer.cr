@@ -27,4 +27,8 @@ struct SDL2::Renderer
   def to_unsafe
     @renderer
   end
+
+  def destroy
+    LibSDL2.destroy_renderer(@renderer)
+  end
 end

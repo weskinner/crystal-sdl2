@@ -25,4 +25,8 @@ struct SDL2::Window
   def to_unsafe
     @window
   end
+
+  def destroy
+    LibSDL2.destroy_window(@window)
+  end
 end
