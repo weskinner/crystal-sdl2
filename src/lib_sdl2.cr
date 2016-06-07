@@ -176,6 +176,10 @@ lib LibSDL2
   # fun load_bmp = SDL_LoadBMP(file : UInt8*) : Surface*
   fun create_window = SDL_CreateWindow(title : UInt8*, x : Int32, y : Int32, width : Int32, height : Int32, flags : SDL2::Window::Flags) : Window*
   fun destroy_window = SDL_DestroyWindow(Window*) : Void
+  fun set_window_position = SDL_SetWindowPosition(window : Window*, x : Int32, y : Int32) : Void
+  fun get_window_position = SDL_GetWindowPosition(window : Window*, x : Int32*, y : Int32*) : Void
+  fun set_window_size = SDL_SetWindowSize(window : Window*, w : Int32, h : Int32) : Void
+  fun get_window_size = SDL_GetWindowSize(window : Window*, w : Int32*, h : Int32*) : Void
   fun delay = SDL_Delay(ms : UInt32) : Void
   fun poll_event = SDL_PollEvent(event : Event*) : Int32
   fun wait_event = SDL_WaitEvent(event : Event*) : Int32
@@ -199,6 +203,16 @@ lib LibSDL2
   fun render_present = SDL_RenderPresent(renderer : Renderer*) : Int32
   fun render_copy = SDL_RenderCopy(renderer : Renderer*, texture : Texture*, srcrect : Rect*, dstrect : Rect*) : Int16
   fun render_copy_ex = SDL_RenderCopyEx(renderer : Renderer*, texture : Texture*, srcrect : Rect*, dstrect : Rect*, angle : Float64, center : Point*, flip : SDL2::RenderFlip) : Int32
+  fun render_draw_point = SDL_RenderDrawPoint(renderer : Renderer*, x : Int32, y : Int32) : Int32
+  fun render_draw_points = SDL_RenderDrawPoints(renderer : Renderer*, points : Point*, count : Int32) : Int32
+  fun render_draw_line = SDL_RenderDrawLine(renderer : Renderer*, x1 : Int32, y1 : Int32, x2 : Int32, y2 : Int32) : Int32
+  fun render_draw_lines = SDL_RenderDrawLines(renderer : Renderer*, points : Point*, count : Int32) : Int32
+  fun render_draw_rect = SDL_RenderDrawRect(renderer : Renderer*, rect : Rect*) : Int32
+  fun render_draw_rects = SDL_RenderDrawRects(renderer : Renderer*, rects : Rect*, count : Int32) : Int32
+  fun render_fill_rect = SDL_RenderFillRect(renderer : Renderer*, rect : Rect*) : Int32
+  fun render_fill_rects = SDL_RenderFillRects(renderer : Renderer*, rects : Rect*, count : Int32) : Int32
+  fun render_set_scale = SDL_RenderSetScale(renderer : Renderer*, scale_x : Float32, scale_y : Float32) : Int32
+  fun render_get_scale = SDL_RenderGetScale(renderer : Renderer*, scale_x : Float32*, scale_y : Float32*) : Void
   fun set_render_draw_blend_mode = SDL_SetRenderDrawBlendMode(renderer : Renderer*, mode : BlendMode) : Int32
   fun set_render_target = SDL_SetRenderTarget(renderer : Renderer*, texture : Texture*) : Int32
   fun set_render_draw_color = SDL_SetRenderDrawColor(renderer : Renderer*, r : UInt8, g : UInt8, b : UInt8, a : UInt8) : Int32
@@ -206,6 +220,8 @@ lib LibSDL2
   fun create_texture_from_surface = SDL_CreateTextureFromSurface(renderer : Renderer*, surface : Surface*) : Texture*
   fun create_texture = SDL_CreateTexture(renderer : Renderer*, format : UInt32, access : TextureAccess, w : Int32, h : Int32) : Texture*
   fun destroy_texture = SDL_DestroyTexture(texture : Texture*) : Void
+  fun set_texture_color_mod = SDL_SetTextureColorMod(texture : Texture*, r : UInt8, g : UInt8, b : UInt8) : Int32
+  fun set_texture_alpha_mod = SDL_SetTextureAlphaMod(texture : Texture*, alpha : UInt8) : Int32
 
   fun rw_from_file = SDL_RWFromFile(str1 : UInt8*, str2 : UInt8*) : RWops*
   fun load_bmp_rw = SDL_LoadBMP_RW(rw_ops : RWops*, int : Int32) : Surface*
@@ -214,6 +230,8 @@ lib LibSDL2
 
   fun blit_surface = SDL_UpperBlit(src : Surface*, src_rect : Rect*, dst : Surface*, dst_rect : Rect*) : Int32
   fun free_surface = SDL_FreeSurface(surface : Surface*) : Void
+  fun set_color_key = SDL_SetColorKey(surface : Surface*, flag : Int32, key : UInt32) : Int32
+  fun get_color_key = SDL_GetColorKey(surface : Surface*, key : UInt32*) : Int32
 
   fun add_timer = SDL_AddTimer(interval : UInt32, callback : TimerCallback, param : Void*) : Int32
   fun remove_timer = SDL_RemoveTimer(id : Int32) : Int32
